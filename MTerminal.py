@@ -5,6 +5,7 @@ import time
 import os
 import argparse
 import sys
+import random
 
 def get_parser():
 	parser = argparse.ArgumentParser(description='MTerminal')
@@ -92,13 +93,17 @@ def play_music():
 
 
 def main():
+	fonts = ["banner","big","block","bubble","digital","ivrit","mini","script","shadow","slant","small","smscript","smshadow","smslant","standard"]
+	random.shuffle(fonts)
 	os.system("clear")
 	os.system('echo  "\\e[1;31m\"')
-	os.system("figlet -f shadow     WinterFreak   ")
+	os.system(f"figlet -f {fonts[random.randint(0, len(fonts)-1)]}    MTerminal   ")
+	os.system('echo "\\e[1;32m\"')
 	os.system('echo "\\e[1;32m\"')
 	os.system('echo "\\e[1;34m Created By W1nterFr3ak\\e[0m"')
-	os.system('echo "\\e[4;32m This Player Was Created By W1nterFr3ak \\e[0m"')
+	os.system('echo "\\e[3;32m Listen to music like its winter \\e[0m"')
 	os.system('echo "\\e[1;32m   Mail: WinterFreak@protonmaail.comm \\e[0m"')
+	print()
 	parser  = get_parser()
 	args  = vars(parser.parse_args())
 	play = args['play']

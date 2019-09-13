@@ -54,7 +54,7 @@ def get_mp3():
 		sys.exit(1)
 			
 
-
+#play controll is broken
 def  play_control(sound):
 	instance = vlc.Instance()
 	player = instance.media_player_new()
